@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/senbei666/clj8b3s6g000p01nufulp2yyj',
+    style: 'mapbox://styles/senbei666/cljfq0au2002g01r7acd2gv2v',
     accessToken: 'pk.eyJ1Ijoic2VuYmVpNjY2IiwiYSI6ImNsZ3hhcm1wcjAwNXYzZWxsZHg4Znc4a3EifQ.JOTZJXycw3C9YvwAFX2bhQ',
     showMarkers: false,
     theme: 'dark',
@@ -42,15 +42,23 @@ var config = {
                 {
                     layer: 'number',
                     opacity: 0
+                },
+                {
+                    layer: 'trip',
+                    opacity: 0
+                },
+                {
+                    layer: 'climate',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
                 {
                     layer: '30n latitude',
                     opacity: 0
-                },
+                }
             ]
-        },
+        },       
         {//北纬三十度简介done
             id: '北纬三十度介绍',
             alignment: 'right',
@@ -70,7 +78,8 @@ var config = {
                 {
                     layer: 'number',
                     opacity: 0
-                }
+                },
+
             ],
             onChapterExit: [
                 {
@@ -123,11 +132,11 @@ var config = {
                 }
             ]
         },
-        {//自然气候
-            id: '气候分布',
+        {//地形地貌done
+            id: '地形地貌',
             alignment: 'right',
-            title: '北纬三十度',
-            description: '北纬30度，主要是指北纬三十度上下波动五度所覆盖的范围。30纬度周边地区作为最适合人类居住的地方可以说是天堂和地狱集于一体。沿地球北纬30°线前行，既有许多奇妙的自然景观，又存在着许多令人难解的神秘、怪异现象，存在着许多地球文明信息。',
+            title: '地形地貌',
+            description: '<h3 style="text-indent:2em;">这里流淌着世界上最长的河流之一——尼罗河，它穿过苏丹、埃及等国家，形成了一道绿色的生命之带。<br /><p style="text-indent:2em;">接下来，我们来到世界屋脊的喜马拉雅山脉，这是地球上最壮丽的山脉之一，逶迤的高峰和雄伟的冰川，在这里你可以感受到大自然的巨大力量，也可以领略到雄伟景色背后的神秘和宁静。<br /><p style="text-indent:2em;">除此之外，地中海地区，圣托里尼岛壮丽的火山景观和无边的蓝色海洋令人着迷。密西西比河岸，这里的湿地和沼泽地景色独特，是一个生物多样性的天堂。',
             location: {
                 center: [120, 29.45851],
                 zoom: 2,
@@ -148,14 +157,50 @@ var config = {
                 {
                     layer: 'countries-included',
                     opacity: 0
+                },
+                {
+                    layer: 'climate',
+                    opacity: 1
                 }
             ]
         },
-        {//世界遗产点数目
+        {//自然气候done
+            id: '北纬三十度介绍',
+            alignment: 'left',
+            title: '追寻多彩的气候之旅',
+            description: '<h3 style="text-indent:2em;">北纬30°的气候类型多种多样，就像大自然的调色板一样多彩。<br /><p style="text-indent:2em;">沿着北纬30°旅行，我们可以在撒哈拉沙漠感受到骄阳似火的炙热，沙丘连绵，蔚蓝的天空中飘着轻盈的云彩。来到地中海地区，我们会被温暖宜人的气候所吸引，在阳光下沐浴、海风中畅游。而到了亚洲的喜马拉雅山脉地区，你将置身于高原的清凉之中，迎接着清新的空气和壮丽的自然景观。如果你更喜欢湿润的气候，新奥尔良将是绝佳选择。那里的亚热带气候让我们在四季如春的环境中感受到丰沛的降水和郁郁葱葱的植被。<br /><p style="text-indent:2em;">这里就像是大自然的宝藏库，它们展现出大自然的魅力和多样性，让人难以忘怀。',
+            location: {
+                center: [94.25423, 29.45851],
+                zoom: 1.5,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'trip',
+                    opacity: 0
+                },
+                {
+                    layer: 'range',
+                    opacity: 0
+                },
+                {
+                    layer: 'climate',
+                    opacity: 0
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: '30n latitude',
+                    opacity: 0
+                },
+            ]
+        },       
+        {//世界遗产点数目done
             id: '世界遗产点',
             alignment: 'right',
-            title: '北纬三十度',
-            description: '北纬30度，主要是指北纬三十度上下波动五度所覆盖的范围。30纬度周边地区作为最适合人类居住的地方可以说是天堂和地狱集于一体。沿地球北纬30°线前行，既有许多奇妙的自然景观，又存在着许多令人难解的神秘、怪异现象，存在着许多地球文明信息。',
+            title: '世界遗产殿堂',
+            description: '<h4 style="text-indent:2em;">在北纬30°的广袤土地上，隐藏着无数令人叹为观止的世界遗产，等待着我们去发现。<br /><p style="text-indent:2em;">中国，恢弘瑰丽，拥有55处世界遗产点，其中长城和故宫承载着悠久的历史传承。埃及，神秘神奇，以7座世界遗产点闻名，这里的金字塔和狮身人面像威严而庄重。希腊，智慧璀璨，灿若繁星般的18个世界遗产点中，雅典卫城矗立于历史的巅峰。摩洛哥，东方魅力，9处世界遗产点中的马拉喀什古城，闪烁着摩尔建筑和热闹的市集。美国，横跨两大洋的国度，拥有24处世界遗产点，其中耶拉美谷和自由女神像是其独特的象征。日本，传统与现代的完美融合，23个世界遗产点中，金阁寺和富士山将带您领略异国风情。印度，多元文化与宗教的交汇之地，38个世界遗产点中，泰姬陵和喀纳克邦的森林令人叹为观止。<br /><p style="text-indent:2em;">无论是追寻历史的足迹、探寻自然的奇观，还是渴望在文化的熏陶中沉醉，这里总能找到让我们心醉神迷的殿堂。',
             location: {
                 center: [94.25423, 29.45851],
                 zoom: 1.5,
@@ -177,20 +222,33 @@ var config = {
                 },
             ],
             onChapterExit: [
+                {
+                    layer: 'number',
+                    opacity: 0
+                }
             ]
         },
         {//亲子之旅线路总览
-            id: '北纬三十度介绍',
-            alignment: 'right',
-            title: '北纬三十度',
-            description: '北纬30度，主要是指北纬三十度上下波动五度所覆盖的范围。30纬度周边地区作为最适合人类居住的地方可以说是天堂和地狱集于一体。沿地球北纬30°线前行，既有许多奇妙的自然景观，又存在着许多令人难解的神秘、怪异现象，存在着许多地球文明信息。',
+            id: '旅游线路',
+            alignment: 'full',
+            title: '',
+            description: '<h1 align="center">北纬三十度亲子之行<br /><br />North Latitude 30°: A Family Adventure in Pursuit of Colorful Climates',
             location: {
                 center: [94.25423, 29.45851],
                 zoom: 1.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
-            onChapterEnter: [],
+            onChapterEnter: [
+                {
+                    layer: 'trip',
+                    opacity: 1
+                },
+                {
+                    layer: 'range',
+                    opacity: 0
+                }
+            ],
             onChapterExit: []
         },
         {//埃及金字塔done
@@ -338,15 +396,15 @@ var config = {
                 // }
             ]
         },
-        {//结语
-            id: '迪士尼乐园',
-            alignment: 'left',
-            title: '迪士尼——探索自然奥义',
-            image: 'https://img1.qunarzz.com/travel/poi/1603/2c/78cf30add65ff9f7.jpg',
-            description: '洛杉矶是美国加利福尼亚州最大的城市，也是世界上最知名的国际都市之一。这里有繁华的购物街区，如比佛利山庄和洛杉矶市中心。洛杉矶还以其丰富的娱乐产业而著名。迪士尼乐园是洛杉矶最著名的旅游景点之一，吸引了无数的游客。游客可以在这里享受刺激的游乐设施、观看精彩的表演和遇见迪士尼的经典角色。此外，洛杉矶还有许多其他的旅游景点，如环球影城、格里菲斯天文台、好莱坞星光大道等。好莱坞是全球最著名的电影产业中心，游客可以参观影视制作场地、观赏明星的手印和脚印，感受电影的魅力。无论你是文化爱好者、购物狂还是娱乐迷，都可以在这里找到自己感兴趣的活动和景点。',
+        {//总结done
+            id: 'storytelling',
+            alignment: 'full',
+            title: '',
+            image: '',
+            description: '<h2 style="text-indent:2em;">纵横北纬三十度，我们仿佛置身于地球的魔幻剧场，多变的地形、多样的气候、多彩的文化。<br /><p style="text-indent:2em;">在这里我们可以感受爵士乐的热情、我们可以感受先进都市的繁华也可以感受古老传统的韵味；这里有欧洲的浪漫也有中华文化的渊源流长。<br /><p style="text-indent:2em;">无论去往何处，北纬三十度就像是一条隐形旅游指南，向我们揭开探索地球的神秘面纱<br /><p style="text-indent:2em;">愿此次北纬三十度之旅带给你一次难忘的回忆！Have a nice trip！',
             location: {
                 center: [94.25423, 25.45851],
-                zoom: 2,
+                zoom: 1.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
