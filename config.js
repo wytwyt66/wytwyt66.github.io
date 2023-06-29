@@ -29,6 +29,10 @@ var config = {
                 {
                     layer: 'range',
                     opacity: 0
+                },
+                {
+                    layer：'climate',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
